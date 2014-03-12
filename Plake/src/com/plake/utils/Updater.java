@@ -38,17 +38,28 @@ public class Updater {
 			return;
 		} else {
 			Object[] options = { "Yes", "No" };
-			int temp = JOptionPane.showOptionDialog(null, "An update has been found for Plake, update?", "Updater", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+			int temp = JOptionPane.showOptionDialog(null, "An update has been found for Plake (current version: " +currentVersion+ ", new version" +newVersion+ "\nUpdate may take upto several minutes\nDo not close the game while updating!\nA window will popup when update is complete!", "Updater", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 			if (temp == 1)
 				return;
 			else {
 				TextFile.writeFile("./version.txt", newVersion);
 				//TODO FLAG
 				// Put all WIP Maps, Sprites, etc here
-				try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Maps/w2_lvl1.map");
+				/*try {
+					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Maps/");
 					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("./res/Maps/w2_lvl1.map");
+					FileOutputStream fos = new FileOutputStream("./res/Maps/");
+					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
+					fos.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+					updateFailed();
+				}*/
+				
+				try {
+					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/");
+					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
+					FileOutputStream fos = new FileOutputStream("./res/");
 					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
 					fos.close();
 				} catch (Exception e) {
@@ -57,15 +68,17 @@ public class Updater {
 				}
 				
 				try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Sprites/Player/Kat/playersprites.gif");
+					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/src/");
 					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("./res/Sprites/Player/Kat/playersprites.gif");
+					FileOutputStream fos = new FileOutputStream("./src/");
 					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
 					fos.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 					updateFailed();
 				}
+				
+				
 
 				finishUpdate();
 				return;
