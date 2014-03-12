@@ -97,8 +97,7 @@ public abstract class MapObject {
 			bottomLeft = bl == Tile.BLOCKED;
 			bottomRight = br == Tile.BLOCKED;
 		} catch (Exception e) {
-			e.getSuppressed();
-			//System.out.println("Dead - AIOOBE");
+			
 		}
 
 	}
