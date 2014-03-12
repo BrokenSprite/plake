@@ -45,32 +45,10 @@ public class Updater {
 				TextFile.writeFile("./version.txt", newVersion);
 				//TODO FLAG
 				// Put all WIP Maps, Sprites, etc here
-				/*try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Maps/");
-					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("./res/Maps/");
-					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
-					fos.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-					updateFailed();
-				}*/
-				
 				try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/");
+					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Maps/w2_lvl1.map");
 					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("./res/");
-					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
-					fos.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-					updateFailed();
-				}
-				
-				try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/src/");
-					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("./src/");
+					FileOutputStream fos = new FileOutputStream("./res/Maps/w2_lvl1.map");
 					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
 					fos.close();
 				} catch (Exception e) {
