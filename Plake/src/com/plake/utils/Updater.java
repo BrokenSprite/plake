@@ -8,8 +8,6 @@ import java.nio.channels.ReadableByteChannel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
-import com.plake.gamestate.MenuState;
-
 public class Updater {
 
 	private static String newVersion;
