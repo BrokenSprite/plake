@@ -4,13 +4,13 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import com.plake.utils.Updater;
+//import com.plake.utils.Updater;
 
 public class Game {
 
-	public static void main(String[] args) {//FUCKING GAY ASS BULLSHIP
+	public static void main(String[] args) {
 		JFrame window = new JFrame("Plake : Beta");
-		Updater.checkForUpdate(false);
+		//Updater.checkForUpdate(true);
 		window.setIconImage(Toolkit.getDefaultToolkit().getImage(Game.class.getResource("/Sprites/Menu/icon.png")));
 		window.add(new GamePanel());
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
