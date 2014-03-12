@@ -12,8 +12,6 @@ import com.plake.audio.AudioPlayer;
 import com.plake.audio.JukeBox;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
-import com.plake.utils.TextFile;
-import com.plake.utils.Updater;
 
 public class MenuState extends GameState {
 
@@ -30,9 +28,9 @@ public class MenuState extends GameState {
 
 	private HashMap<String, AudioPlayer> sfx;
 
-	//private Updater u;
-	
-	private String version;
+	// private Updater u;
+
+	public static String version;
 
 	public MenuState(GameStateManager gsm) {
 		super(gsm);
@@ -70,7 +68,7 @@ public class MenuState extends GameState {
 		handleInput();
 		bg.update();
 	}
-	
+
 	public void draw(Graphics2D g) {
 		bg.draw(g);
 		g.drawImage(title, 60, 30, null);
@@ -80,7 +78,7 @@ public class MenuState extends GameState {
 
 		g.setColor(versionColor);
 		g.setFont(fontInfo);
-		g.drawString("Open Beta " +version, 118, 80);
+		g.drawString("Open Beta " + version, 118, 80);
 
 		g.drawString("Choose", 83, 210);
 		g.drawString("Select", 181, 210);

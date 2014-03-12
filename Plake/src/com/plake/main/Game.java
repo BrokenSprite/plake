@@ -4,7 +4,6 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import com.plake.utils.TextFile;
 import com.plake.utils.Updater;
 
 public class Game {
