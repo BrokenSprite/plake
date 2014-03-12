@@ -43,11 +43,12 @@ public class Updater {
 				return;
 			else {
 				TextFile.writeFile("./version.txt", newVersion);
-
+				//TODO FLAG
+				// Put all WIP Maps, Sprites, etc here
 				try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Sprites/Player/Kat/playersprites.gif");
+					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Maps/w2_lvl1.map");
 					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("./Sprites/Player/Kat/playersprites.gif");
+					FileOutputStream fos = new FileOutputStream("./res/Maps/w2_lvl1.map");
 					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
 					fos.close();
 				} catch (Exception e) {
@@ -56,9 +57,9 @@ public class Updater {
 				}
 				
 				try {
-					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Maps/w2_lvl1.map");
+					URL site = new URL("https://raw.github.com/BrokenSprite/plake/master/Plake/res/Sprites/Player/Kat/playersprites.gif");
 					ReadableByteChannel rbc = Channels.newChannel(site.openStream());
-					FileOutputStream fos = new FileOutputStream("/Maps/w2_lvl1.map");
+					FileOutputStream fos = new FileOutputStream("./res/Sprites/Player/Kat/playersprites.gif");
 					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
 					fos.close();
 				} catch (Exception e) {
