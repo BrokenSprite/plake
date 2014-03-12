@@ -1,0 +1,28 @@
+BETA CHANGELOG:
+
+Beta 1.4.0 (March XX, 2014) :
+- Added ruins/desert music
+- 
+
+Beta 1.3.1c (March 9th, 2014) :
+- Updated License
+
+...
+
+Beta 1.2.0 (February 5th, 2014) :
+- Levels update
+
+Beta 1.1.3 (February 5th, 2014) :
+- lives saving/stacking after level 1
+- added single 2 sprite
+- added w to the paused screen
+
+Beta 1.1.2 (February 5th, 2014) :
+- removed time from level completed, a bug.
+- Fixed lives on level completed.
+
+Beta 1.1.1 (February 4th, 2014) :
+- Added ESC key to Level completed to go to main menu.
+- Added ESC Sprite.
+- Fixed score being 1 on level initialization.
+- Added Time and Lives to the level completed screen.
