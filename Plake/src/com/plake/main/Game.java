@@ -4,13 +4,12 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-//import com.plake.utils.Updater;
-
 public class Game {
 
+	public static String version = "1.3.2";
+	
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Plake : Beta");
-		//Updater.checkForUpdate(true);
 		window.setIconImage(Toolkit.getDefaultToolkit().getImage(Game.class.getResource("/Sprites/Menu/icon.png")));
 		window.add(new GamePanel());
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -31,7 +31,7 @@ public class Updater {
 		}
 
 		newVersion = TextFile.readFile("./version.txt");
-		MenuState.version = currentVersion;
+		
 		if (currentVersion.equals(newVersion)) {
 			if (!isAuto)
 				doNotUpdate();
