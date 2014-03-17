@@ -6,8 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
-
-import com.plake.audio.JukeBox;
 import com.plake.main.GamePanel;
 import com.plake.utils.Keys;
 
@@ -60,7 +58,6 @@ public class PauseState {
 			gsm.setPaused(false);
 		}
 		if (Keys.isPressed(Keys.BUTTON1)) {
-			JukeBox.close("level1");
 			gsm.setPaused(false);
 			gsm.setState(GameStateManager.MENUSTATE);
 		}

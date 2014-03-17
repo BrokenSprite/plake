@@ -2,7 +2,6 @@ package com.plake.gamestate;
 
 import java.awt.image.BufferedImage;
 
-import com.plake.audio.JukeBox;
 import com.plake.gamestate.world_one.Level1State;
 import com.plake.gamestate.world_one.Level2State;
 import com.plake.gamestate.world_one.Level3State;
@@ -41,8 +40,6 @@ public class GameStateManager {
 	public boolean charsel;
 
 	public GameStateManager() {
-
-		JukeBox.init();
 
 		gameStates = new GameState[NUMGAMESTATES];
 		pauseState = new PauseState(this);

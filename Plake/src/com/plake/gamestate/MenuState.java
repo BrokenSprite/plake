@@ -43,10 +43,6 @@ public class MenuState extends GameState {
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
 
-		// JukeBox.load("/Music/menumusic.mp3", "menuMusic");
-		// JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") -
-		// 2200);
-
 		Game.class.getResource("/Music/menumusic.ogg");
 		try {
 			SoundSystemConfig.addLibrary(LibraryJavaSound.class);
@@ -56,7 +52,7 @@ public class MenuState extends GameState {
 		}
 		SoundSystem menuMusic = new SoundSystem();
 
-		menuMusic.quickPlay(false, Game.class.getResource("/Music/menumusic.ogg"), "menumusic.ogg", true, 0, 0, 0, SoundSystemConfig.ATTENUATION_NONE, 0);
+		menuMusic.quickPlay(false, Game.class.getResource("/Music/menumusic.ogg"), "menumusic.ogg", true, 0, 2200, 2200, SoundSystemConfig.ATTENUATION_NONE, 2200);
 
 		this.gsm = gsm;
 		try {
