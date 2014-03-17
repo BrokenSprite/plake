@@ -2,6 +2,8 @@ package com.plake.gamestate;
 
 import java.awt.image.BufferedImage;
 
+import HUD.CharacterSelect;
+
 import com.plake.audio.JukeBox;
 import com.plake.gamestate.world_one.Level1State;
 import com.plake.gamestate.world_one.Level2State;

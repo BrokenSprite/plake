@@ -4,12 +4,12 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
 import com.plake.audio.AudioPlayer;
-import com.plake.audio.JukeBox;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
@@ -38,8 +38,10 @@ public class MenuState extends GameState {
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
 
-		JukeBox.load("/Music/menumusic.mp3", "menuMusic");
-		JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") - 2200);
+		// JukeBox.load("/Music/menumusic.mp3", "menuMusic");
+		// JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") -
+		// 2200);
+
 
 		this.gsm = gsm;
 		try {
