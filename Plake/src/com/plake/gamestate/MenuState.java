@@ -47,6 +47,7 @@ public class MenuState extends GameState {
 		// JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") -
 		// 2200);
 
+		Game.class.getResource("/Music/menumusic.ogg");
 		try {
 			SoundSystemConfig.addLibrary(LibraryJavaSound.class);
 			SoundSystemConfig.setCodec("ogg", CodecJOrbis.class);
@@ -55,7 +56,7 @@ public class MenuState extends GameState {
 		}
 		SoundSystem menuMusic = new SoundSystem();
 
-		menuMusic.quickPlay(false, "/Music/menumusic.ogg", false, 0, 0, 0, SoundSystemConfig.ATTENUATION_NONE, 0);
+		menuMusic.quickPlay(false, Game.class.getResource("/Music/menumusic.ogg"), "menumusic.ogg", true, 0, 0, 0, SoundSystemConfig.ATTENUATION_NONE, 0);
 
 		this.gsm = gsm;
 		try {
@@ -113,7 +114,7 @@ public class MenuState extends GameState {
 	private void select() {
 		if (currentChoice == 0) {
 			gsm.setState(7);
-			// JukeBox.stop("menuMusic");
+			
 		}
 		if (currentChoice == 1) {
 			System.exit(0);
