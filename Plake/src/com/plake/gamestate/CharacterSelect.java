@@ -1,4 +1,4 @@
-package HUD;
+package com.plake.gamestate;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -12,8 +12,6 @@ import com.plake.audio.AudioPlayer;
 import com.plake.audio.JukeBox;
 import com.plake.entity.FireBall;
 import com.plake.entity.Player;
-import com.plake.gamestate.GameState;
-import com.plake.gamestate.GameStateManager;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
 

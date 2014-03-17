@@ -4,10 +4,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
+
+import paulscode.sound.SoundSystem;
+import paulscode.sound.SoundSystemConfig;
+import paulscode.sound.SoundSystemException;
+import paulscode.sound.codecs.CodecJOrbis;
+import paulscode.sound.libraries.LibraryJavaSound;
 
 import com.plake.audio.AudioPlayer;
 import com.plake.main.Game;
@@ -42,6 +47,15 @@ public class MenuState extends GameState {
 		// JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") -
 		// 2200);
 
+		try {
+			SoundSystemConfig.addLibrary(LibraryJavaSound.class);
+			SoundSystemConfig.setCodec("ogg", CodecJOrbis.class);
+		} catch (SoundSystemException e) {
+			System.err.println("error linking with the plug-ins");
+		}
+		SoundSystem menuMusic = new SoundSystem();
+
+		menuMusic.quickPlay(false, "/Music/menumusic.ogg", false, 0, 0, 0, SoundSystemConfig.ATTENUATION_NONE, 0);
 
 		this.gsm = gsm;
 		try {
