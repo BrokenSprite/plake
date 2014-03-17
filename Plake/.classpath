@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="libs/JSplashScreen.jar"/>
 	<classpathentry kind="lib" path="libs/startup2.jar"/>
 	<classpathentry kind="lib" path="libs/jl1.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/SoundSystem.jar"/>
+	<classpathentry kind="lib" path="libs/LibraryJavaSound.jar"/>
+	<classpathentry kind="lib" path="libs/CodecJOrbis.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
