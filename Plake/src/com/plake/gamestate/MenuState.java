@@ -9,6 +9,7 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import com.plake.audio.AudioPlayer;
+import com.plake.audio.JukeBox;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
@@ -53,6 +54,9 @@ public class MenuState extends GameState {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		JukeBox.load("/Music/menumusic.mp3", "menumusic");
+		JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") - 2200);
 
 	}
 
