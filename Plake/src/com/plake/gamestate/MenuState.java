@@ -8,8 +8,13 @@ import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
+import paulscode.sound.SoundSystem;
+import paulscode.sound.SoundSystemConfig;
+import paulscode.sound.SoundSystemException;
+import paulscode.sound.codecs.CodecJOrbis;
+import paulscode.sound.libraries.LibraryJavaSound;
+
 import com.plake.audio.AudioPlayer;
-import com.plake.audio.JukeBox;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
@@ -46,19 +51,31 @@ public class MenuState extends GameState {
 			font = new Font("Arial", Font.PLAIN, 12);
 			fontInfo = new Font("Arial", Font.PLAIN, 10);
 
-			title = ImageIO.read(getClass().getResourceAsStream("/Menu/title.png"));
+			title = ImageIO.read(getClass().getResourceAsStream(
+					"/Menu/title.png"));
 
-			up = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowup.gif"));
-			down = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowdown.gif"));
-			enter = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/enter.gif"));
+			up = ImageIO.read(getClass().getResourceAsStream(
+					"/Sprites/Buttons/arrowup.gif"));
+			down = ImageIO.read(getClass().getResourceAsStream(
+					"/Sprites/Buttons/arrowdown.gif"));
+			enter = ImageIO.read(getClass().getResourceAsStream(
+					"/Sprites/Buttons/enter.gif"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		JukeBox.load("/Music/menumusic.mp3", "menumusic");
-		JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") - 2200);
 
-	}
+		// JukeBox.load("/Music/menumusic.mp3", "menumusic");
+		// JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") -
+		// 2200);
+		try {
+			SoundSystemConfig.addLibrary(LibraryJavaSound.class);
+			SoundSystemConfig.setCodec("mp3", CodecJOrbis.class);
+			SoundSystem mySoundSystem = new SoundSystem();
+			mySoundSystem.backgroundMusic("/Music/menumusic.mp3", "menuMusic.mp3", true);
+		} catch (SoundSystemException e) {
+			System.err.println("error linking with the plug-ins");
+		}
+			}
 
 	public void init() {
 	}
