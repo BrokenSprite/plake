@@ -8,18 +8,15 @@ import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
-import paulscode.sound.SoundSystem;
-import paulscode.sound.SoundSystemConfig;
-import paulscode.sound.SoundSystemException;
-import paulscode.sound.codecs.CodecJOrbis;
-import paulscode.sound.libraries.LibraryJavaSound;
-
 import com.plake.audio.AudioPlayer;
+import com.plake.audio.MusicPlayer;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
 
 public class MenuState extends GameState {
+
+	private MusicPlayer mp;
 
 	private Background bg;
 
@@ -42,17 +39,6 @@ public class MenuState extends GameState {
 		sfx = new HashMap<String, AudioPlayer>();
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
-
-		Game.class.getResource("/Music/menumusic.ogg");
-		try {
-			SoundSystemConfig.addLibrary(LibraryJavaSound.class);
-			SoundSystemConfig.setCodec("ogg", CodecJOrbis.class);
-		} catch (SoundSystemException e) {
-			System.err.println("error linking with the plug-ins");
-		}
-		SoundSystem menuMusic = new SoundSystem();
-
-		menuMusic.quickPlay(false, Game.class.getResource("/Music/menumusic.ogg"), "menumusic.ogg", true, 0, 2200, 2200, SoundSystemConfig.ATTENUATION_NONE, 2200);
 
 		this.gsm = gsm;
 		try {
@@ -110,9 +96,10 @@ public class MenuState extends GameState {
 	private void select() {
 		if (currentChoice == 0) {
 			gsm.setState(7);
-			
+
 		}
 		if (currentChoice == 1) {
+
 			System.exit(0);
 		}
 	}
@@ -121,6 +108,7 @@ public class MenuState extends GameState {
 
 		if (Keys.isPressed(Keys.ENTER)) {
 			sfx.get("menuselect").play();
+
 			System.out.println("Handled Enter");
 			select();
 		} else if (Keys.isPressed(Keys.UP)) {

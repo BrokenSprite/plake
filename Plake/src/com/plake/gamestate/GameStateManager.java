@@ -2,6 +2,7 @@ package com.plake.gamestate;
 
 import java.awt.image.BufferedImage;
 
+import com.plake.audio.MusicPlayer;
 import com.plake.gamestate.world_one.Level1State;
 import com.plake.gamestate.world_one.Level2State;
 import com.plake.gamestate.world_one.Level3State;
@@ -34,13 +35,14 @@ public class GameStateManager {
 	public boolean l1beat, l2beat, l3beat, l4beat, l5beat;
 	public boolean w2_l1beat;
 
+	private MusicPlayer mp;
 	private PauseState pauseState;
 	private CharacterSelect charSel;
 	public boolean paused;
 	public boolean charsel;
 
 	public GameStateManager() {
-
+		
 		gameStates = new GameState[NUMGAMESTATES];
 		pauseState = new PauseState(this);
 		paused = false;
@@ -93,7 +95,7 @@ public class GameStateManager {
 			gameStates[state] = new Level3State(this);
 		else if (state == LEVEL4STATE)
 			gameStates[state] = new Level4State(this);
-		
+
 		else if (state == LEVEL5STATE)
 			gameStates[state] = new Level5State(this);
 
