@@ -9,14 +9,11 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import com.plake.audio.AudioPlayer;
-import com.plake.audio.MusicPlayer;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
 
 public class MenuState extends GameState {
-
-	private MusicPlayer mp;
 
 	private Background bg;
 
