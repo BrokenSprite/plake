@@ -7,11 +7,6 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.DataLine;
 
 import com.plake.audio.AudioPlayer;
 import com.plake.audio.JukeBox;
@@ -42,8 +37,7 @@ public class MenuState extends GameState {
 		sfx = new HashMap<String, AudioPlayer>();
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
-		JukeBox.load("/Music/menumusic.mp3", "menuMusic");
-		JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") - 2200);
+		
 		this.gsm = gsm;
 		try {
 
@@ -62,14 +56,8 @@ public class MenuState extends GameState {
 			e.printStackTrace();
 		}
 
-		/*
-		 * JukeBox.load("/Music/menumusic.mp3", "menumusic");
-		 * JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") -
-		 * 2200);
-		 */
-		// create the format used for playback
-		// (uncompressed, 44100Hz, 16-bit, mono, signed, little-endian)
-
+		JukeBox.load("/Music/menumusic.mp3", "menumusic");
+		JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") - 2200);
 	}
 
 	public void init() {

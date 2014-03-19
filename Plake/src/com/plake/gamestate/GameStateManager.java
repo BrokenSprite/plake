@@ -33,14 +33,14 @@ public class GameStateManager {
 
 	public boolean l1beat, l2beat, l3beat, l4beat, l5beat;
 	public boolean w2_l1beat;
-	
+
 	private PauseState pauseState;
 	private CharacterSelect charSel;
 	public boolean paused;
 	public boolean charsel;
 
 	public GameStateManager() {
-		
+
 		gameStates = new GameState[NUMGAMESTATES];
 		pauseState = new PauseState(this);
 		paused = false;
