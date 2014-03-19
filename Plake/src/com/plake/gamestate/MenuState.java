@@ -7,14 +7,14 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
-
-import paulscode.sound.SoundSystem;
-import paulscode.sound.SoundSystemConfig;
-import paulscode.sound.SoundSystemException;
-import paulscode.sound.codecs.CodecJOrbis;
-import paulscode.sound.libraries.LibraryJavaSound;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
 
 import com.plake.audio.AudioPlayer;
+import com.plake.audio.JukeBox;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
@@ -42,40 +42,35 @@ public class MenuState extends GameState {
 		sfx = new HashMap<String, AudioPlayer>();
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
-
+		JukeBox.load("/Music/menumusic.mp3", "menuMusic");
+		JukeBox.loop("menuMusic", 600, JukeBox.getFrames("menuMusic") - 2200);
 		this.gsm = gsm;
 		try {
+
 			bg = new Background("/Backgrounds/menubg.gif", 1);
 			bg.setVector(-0.1, 0);
 			versionColor = new Color(84, 84, 84);
 			font = new Font("Arial", Font.PLAIN, 12);
 			fontInfo = new Font("Arial", Font.PLAIN, 10);
 
-			title = ImageIO.read(getClass().getResourceAsStream(
-					"/Menu/title.png"));
+			title = ImageIO.read(getClass().getResourceAsStream("/Menu/title.png"));
 
-			up = ImageIO.read(getClass().getResourceAsStream(
-					"/Sprites/Buttons/arrowup.gif"));
-			down = ImageIO.read(getClass().getResourceAsStream(
-					"/Sprites/Buttons/arrowdown.gif"));
-			enter = ImageIO.read(getClass().getResourceAsStream(
-					"/Sprites/Buttons/enter.gif"));
+			up = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowup.gif"));
+			down = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowdown.gif"));
+			enter = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/enter.gif"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		// JukeBox.load("/Music/menumusic.mp3", "menumusic");
-		// JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") -
-		// 2200);
-		try {
-			SoundSystemConfig.addLibrary(LibraryJavaSound.class);
-			SoundSystemConfig.setCodec("mp3", CodecJOrbis.class);
-			SoundSystem mySoundSystem = new SoundSystem();
-			mySoundSystem.backgroundMusic("/Music/menumusic.mp3", "menuMusic.mp3", true);
-		} catch (SoundSystemException e) {
-			System.err.println("error linking with the plug-ins");
-		}
-			}
+		/*
+		 * JukeBox.load("/Music/menumusic.mp3", "menumusic");
+		 * JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") -
+		 * 2200);
+		 */
+		// create the format used for playback
+		// (uncompressed, 44100Hz, 16-bit, mono, signed, little-endian)
+
+	}
 
 	public void init() {
 	}
