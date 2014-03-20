@@ -19,10 +19,10 @@ public class JukeBox
     }
     
     public static void load(final String s, final String n) {
-        if (JukeBox.clips.get(n) != null) {
-            return;
-        }
         try {
+        	if (JukeBox.clips.get(n) != null) {
+                return;
+            }
             final AudioInputStream ais = AudioSystem.getAudioInputStream(JukeBox.class.getResourceAsStream(s));
             final AudioFormat baseFormat = ais.getFormat();
             final AudioFormat decodeFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, baseFormat.getSampleRate(), 16, baseFormat.getChannels(), baseFormat.getChannels() * 2, baseFormat.getSampleRate(), false);

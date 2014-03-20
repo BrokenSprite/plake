@@ -37,6 +37,7 @@ public class MenuState extends GameState {
 		sfx = new HashMap<String, AudioPlayer>();
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
+		sfx.put("menumusic", new AudioPlayer("/Music/menumusic.mp3"));
 		
 		this.gsm = gsm;
 		try {
@@ -55,9 +56,9 @@ public class MenuState extends GameState {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		JukeBox.load("/Music/menumusic.mp3", "menumusic");
-		JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") - 2200);
+		//sfx.get("menumusic").play();
+		//JukeBox.load("/Music/menumusic.mp3", "menumusic");
+		//JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") - 2200);
 	}
 
 	public void init() {
