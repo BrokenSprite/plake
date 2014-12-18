@@ -84,7 +84,7 @@ public class Level1State extends GameState {
 		}
 
 		JukeBox.load("/Music/level1-1.mp3", "level1");
-		JukeBox.loop("level1", 600, JukeBox.getFrames("level1") - 2200);
+		//JukeBox.loop("level1", 600, JukeBox.getFrames("level1") - 2200);
 
 		System.out.println("Level: Level1State (Tutorial Level) Initialized!");
 	}
@@ -143,7 +143,7 @@ public class Level1State extends GameState {
 		player.checkAttack(enemys);
 
 		if (teleport.intersects(player)) {
-			JukeBox.stop("level1");
+			//JukeBox.stop("level1");
 			gsm.l1beat = true;
 			gsm.setState(8);
 			System.out.println("Level: Level1State (Tutorial Level) Completed!");

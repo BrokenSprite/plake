@@ -64,7 +64,8 @@ public class Level3State extends GameState {
 
 		try {
 			titleStart = true;
-			levelText = ImageIO.read(getClass().getResourceAsStream("/Title/level3.png"));
+			levelText = ImageIO.read(getClass().getResourceAsStream(
+					"/Title/level3.png"));
 			title = new Title(levelText.getSubimage(0, 0, 110, 40));
 			title.sety(60);
 		} catch (Exception e) {
@@ -72,8 +73,8 @@ public class Level3State extends GameState {
 		}
 
 		JukeBox.load("/Music/level1-1.mp3", "level1");
-		JukeBox.loop("level1", 600, JukeBox.getFrames("level1") - 2200);
-		
+		// JukeBox.loop("level1", 600, JukeBox.getFrames("level1") - 2200);
+
 		System.out.println("Level: Level 3 (Normal Level) Initialized!");
 	}
 
@@ -106,11 +107,13 @@ public class Level3State extends GameState {
 		tileMap.setPosition(160 - player.getx(), 120 - player.gety());
 		bg.setPosition(tileMap.getx(), tileMap.gety());
 
-		if (player.getHealth() == 0 || player.getx() > tileMap.getWidth() || player.gety() > tileMap.getHeight()) player.setDead(true);
+		if (player.getHealth() == 0 || player.getx() > tileMap.getWidth()
+				|| player.gety() > tileMap.getHeight())
+			player.setDead(true);
 		player.checkAttack(enemys);
 
 		if (teleport.intersects(player)) {
-			JukeBox.stop("level1");
+			// JukeBox.stop("level1");
 			gsm.l3beat = true;
 			gsm.setState(8);
 		}
@@ -122,7 +125,8 @@ public class Level3State extends GameState {
 
 		if (title != null) {
 			title.update();
-			if (title.shouldRemove()) title = null;
+			if (title.shouldRemove())
+				title = null;
 		}
 
 		for (int i = 0; i < enemys.size(); i++) {
@@ -161,25 +165,31 @@ public class Level3State extends GameState {
 			((Enemy) enemys.get(i)).draw(g);
 		teleport.draw(g);
 		for (int i = 0; i < explosions.size(); i++) {
-			((Explosion) explosions.get(i)).setMapPosition((int) tileMap.getx(), (int) tileMap.gety());
+			((Explosion) explosions.get(i)).setMapPosition(
+					(int) tileMap.getx(), (int) tileMap.gety());
 			((Explosion) explosions.get(i)).draw(g);
 		}
 		hud.draw(g);
 
-		if (title != null) title.draw(g);
+		if (title != null)
+			title.draw(g);
 	}
 
 	public void handleInput() {
-		if (Keys.isPressed(Keys.ESCAPE)) gsm.setPaused(true);
-		if (player.getHealth() == 0) return;
+		if (Keys.isPressed(Keys.ESCAPE))
+			gsm.setPaused(true);
+		if (player.getHealth() == 0)
+			return;
 		player.setUp(Keys.keyState[Keys.UP]);
 		player.setDown(Keys.keyState[Keys.DOWN]);
 		player.setLeft(Keys.keyState[Keys.LEFT] || Keys.keyState[Keys.A]);
 		player.setRight(Keys.keyState[Keys.RIGHT] || Keys.keyState[Keys.D]);
 		player.setJumping(Keys.keyState[Keys.BUTTON1]);
 		player.setGliding(Keys.keyState[Keys.BUTTON2]);
-		if (Keys.isPressed(Keys.BUTTON4)) player.setFiring();
-		if (Keys.isPressed(Keys.BUTTON3)) player.setScratching();
+		if (Keys.isPressed(Keys.BUTTON4))
+			player.setFiring();
+		if (Keys.isPressed(Keys.BUTTON3))
+			player.setScratching();
 	}
 
 }

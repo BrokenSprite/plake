@@ -121,19 +121,19 @@ public class CharacterSelect extends GameState {
 			Player.path = "/Sprites/Player/Greendrag/playersprites.gif";
 			FireBall.path = "/Sprites/Player/fireball.gif";
 			gsm.setState(1);
-			JukeBox.stop("menuMusic");
+			//JukeBox.stop("menuMusic");
 		}
 		if (currentChoice == 1) {
 			Player.path = "/Sprites/Player/Kat/playersprites.gif";
 			FireBall.path = "/Sprites/Player/Kat/hairball.gif";
 			gsm.setState(1);
-			JukeBox.stop("menuMusic");
+			//JukeBox.stop("menuMusic");
 		}
 		if (currentChoice == 2) {
 			Player.path = "/Sprites/Player/Bluedrag/playersprites.gif";
 			FireBall.path = "/Sprites/Player/fireball.gif";
 			gsm.setState(1);
-			JukeBox.stop("menuMusic");
+			//JukeBox.stop("menuMusic");
 		}
 	}
 

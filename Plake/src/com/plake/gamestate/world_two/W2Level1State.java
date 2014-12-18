@@ -74,7 +74,7 @@ public class W2Level1State extends GameState {
 		}
 
 		JukeBox.load("/Music/dhaka.mp3", "dhaka");
-		JukeBox.loop("dhaka", 600, JukeBox.getFrames("dhaka") - 2200);
+		//JukeBox.loop("dhaka", 600, JukeBox.getFrames("dhaka") - 2200);
 	}
 
 	private void populateEntity() {
@@ -113,7 +113,7 @@ public class W2Level1State extends GameState {
 			player.setDead(true);
 		player.checkAttack(enemys);
 		if (teleport.intersects(player)) {
-			JukeBox.stop("dhaka");
+			//JukeBox.stop("dhaka");
 			gsm.w2_l1beat = true; // TODO FLAG
 			gsm.setState(8);
 		}
