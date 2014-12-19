@@ -15,7 +15,7 @@ import com.plake.utils.Keys;
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 
-	public static final int WIDTH = 320;// 320
+	public static final int WIDTH = 400;// 320
 	public static final int HEIGHT = 240;// 240
 	public static final int SCALE = 2;
 

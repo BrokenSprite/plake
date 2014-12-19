@@ -35,7 +35,7 @@ public class HUD {
 		g.drawString(" " + LevelCompletedState.score / 1, 15, 67);
 		
 		g.setColor(java.awt.Color.WHITE);
-		g.drawString(player.getTimeToString(), 290, 15);
+		g.drawString(player.getTimeToString(), 367, 24);
 	}
 
 }

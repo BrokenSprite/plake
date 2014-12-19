@@ -82,7 +82,7 @@ public class Level3State extends GameState {
 		enemys = new ArrayList<Enemy>();
 		entities = new ArrayList<EntitySpecial>();
 		Slugger s;
-		Crawler s2;
+		Crawler c;
 		Point[] points = new Point[] {};
 		Point[] points2 = new Point[] {};
 		for (int i = 0; i < points.length; i++) {
@@ -91,9 +91,9 @@ public class Level3State extends GameState {
 			enemys.add(s);
 		}
 		for (int i = 0; i < points2.length; i++) {
-			s2 = new Crawler(tileMap);
-			s2.setPosition(points2[i].x, points2[i].y);
-			enemys.add(s2);
+			c = new Crawler(tileMap);
+			c.setPosition(points2[i].x, points2[i].y);
+			enemys.add(c);
 		}
 	}
 
