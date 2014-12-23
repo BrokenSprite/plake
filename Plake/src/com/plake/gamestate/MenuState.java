@@ -71,8 +71,8 @@ public class MenuState extends GameState {
 	public void draw(Graphics2D g) {
 		bg.draw(g);
 		g.drawImage(title, 105, 25, null);
-		g.drawImage(up, 180, 188, null);
-		g.drawImage(down, 202, 188, null);
+		g.drawImage(up, 290, 188, null);
+		g.drawImage(down, 310, 188, null);
 		g.drawImage(enter, 80, 188, null);
 
 		g.setColor(versionColor);
@@ -80,7 +80,7 @@ public class MenuState extends GameState {
 		g.drawString("Open Beta " + Game.version, 162, 75);
 
 		g.drawString("Choose", 83, 210);
-		g.drawString("Select", 181, 210);
+		g.drawString("Select", 291, 210);
 
 		g.setFont(font);
 
@@ -90,7 +90,7 @@ public class MenuState extends GameState {
 			} else {
 				g.setColor(Color.RED);
 			}
-			g.drawString(options[i], 145, 140 + i * 15);
+			g.drawString(options[i], 190, 140 + i * 15);
 		}
 	}
 

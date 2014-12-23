@@ -60,20 +60,20 @@ public class LevelCompletedState extends GameState {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
 		g.setColor(Color.WHITE);
-		g.drawImage(pEnter, 93, 130, null);
-		g.drawImage(pEsc, 101, 147, null);
+		g.drawImage(pEnter, 123, 130, null);
+		g.drawImage(pEsc, 131, 147, null);
 
 		g.setFont(font);
-		g.drawString("Congratulations! You beat the level!", 32, 20);
+		g.drawString("Congratulations! You beat the level!", 62, 20);
 
 		g.setFont(fontStats);
-		g.drawString("Score:                   " + score, 90, 60);
-		g.drawString("Lives:                    " + lives, 90, 80);
-		g.drawString("Enemeys Killed:     " + eDead, 90, 100);
-		g.drawString("Press             to go to the next level", 55, 140);
+		g.drawString("Score:                   " + score, 125, 60);
+		g.drawString("Lives:                    " + lives + "/5", 125, 80);
+		g.drawString("Enemeys Killed:     " + eDead, 125, 100);
+		g.drawString("Press             to go to the next level", 85, 140);
 
 		g.setFont(fontMenu);
-		g.drawString("Or press            to return to the Main Menu", 60, 155);
+		g.drawString("Or press            to return to the Main Menu", 90, 155);
 	}
 
 	public void handleInput() {

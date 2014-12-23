@@ -81,22 +81,22 @@ public class CharacterSelect extends GameState {
 
 	public void draw(Graphics2D g) {
 		bg.draw(g);
-		g.drawImage(title, 60, 30, null);
-		g.drawImage(left, 180, 188, null);
-		g.drawImage(right, 202, 188, null);
+		g.drawImage(title, 105, 25, null);
+		g.drawImage(left, 290, 188, null);
+		g.drawImage(right, 310, 188, null);
 		g.drawImage(enter, 80, 188, null);
 
 		g.drawImage(greendrag, 75, 130, null);
 		g.drawImage(kat, 154, 133, null);
 		g.drawImage(bluedrag, 230, 130, null);
-		g.drawImage(purpledrag, 306, 130, null);
+		g.drawImage(purpledrag, 315, 130, null);
 
 		g.setColor(versionColor);
 		g.setFont(fontInfo);
 		// g.drawString("Open Beta " + Game.version, 118, 80);
 
 		g.drawString("Choose", 83, 210);
-		g.drawString("Select", 181, 210);
+		g.drawString("Select", 291, 210);
 
 		g.setFont(font);
 
@@ -112,7 +112,7 @@ public class CharacterSelect extends GameState {
 				g.drawImage(highlighted, 230, 130, null);
 			} else if (i == currentChoice && i == 3) {
 				g.setColor(Color.BLACK);
-				g.drawImage(highlighted, 306, 130, null);
+				g.drawImage(highlighted, 315, 130, null);
 			} else {
 				g.setColor(Color.RED);
 			}
