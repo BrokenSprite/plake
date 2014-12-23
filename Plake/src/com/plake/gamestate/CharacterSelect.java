@@ -9,7 +9,6 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import com.plake.audio.AudioPlayer;
-import com.plake.audio.JukeBox;
 import com.plake.entity.FireBall;
 import com.plake.entity.Player;
 import com.plake.tilemap.Background;

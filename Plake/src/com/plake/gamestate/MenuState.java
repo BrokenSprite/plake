@@ -9,7 +9,6 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import com.plake.audio.AudioPlayer;
-import com.plake.audio.JukeBox;
 import com.plake.main.Game;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
@@ -71,14 +70,14 @@ public class MenuState extends GameState {
 
 	public void draw(Graphics2D g) {
 		bg.draw(g);
-		g.drawImage(title, 60, 30, null);
+		g.drawImage(title, 105, 25, null);
 		g.drawImage(up, 180, 188, null);
 		g.drawImage(down, 202, 188, null);
 		g.drawImage(enter, 80, 188, null);
 
 		g.setColor(versionColor);
 		g.setFont(fontInfo);
-		g.drawString("Open Beta " + Game.version, 118, 80);
+		g.drawString("Open Beta " + Game.version, 162, 75);
 
 		g.drawString("Choose", 83, 210);
 		g.drawString("Select", 181, 210);

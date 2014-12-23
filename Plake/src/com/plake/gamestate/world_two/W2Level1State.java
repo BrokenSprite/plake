@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import com.plake.audio.JukeBox;
 import com.plake.entity.Enemy;
 import com.plake.entity.EntitySpecial;
 import com.plake.entity.Explosion;
@@ -72,9 +71,6 @@ public class W2Level1State extends GameState {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		JukeBox.load("/Music/dhaka.mp3", "dhaka");
-		//JukeBox.loop("dhaka", 600, JukeBox.getFrames("dhaka") - 2200);
 	}
 
 	private void populateEntity() {

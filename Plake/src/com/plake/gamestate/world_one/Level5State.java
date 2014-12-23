@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import com.plake.audio.JukeBox;
 import com.plake.entity.Enemy;
 import com.plake.entity.EntitySpecial;
 import com.plake.entity.Explosion;
@@ -72,9 +71,6 @@ public class Level5State extends GameState {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		JukeBox.load("/Music/level1-1.mp3", "level1");
-		//JukeBox.loop("level1", 600, JukeBox.getFrames("level1") - 2200);
 
 		System.out.println("Level: Level 5 (Nomral Level) Initialized!");// TODO
 																			// FLAG

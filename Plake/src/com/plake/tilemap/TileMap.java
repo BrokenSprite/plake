@@ -138,9 +138,6 @@ public class TileMap {
 
 	public void setPosition(double x, double y) {
 
-		System.out.println(this.x);
-		// System.out.println((x - this.x) * tween);
-
 		this.x += (x - this.x) * tween;
 		this.y += (y - this.y) * tween;
 

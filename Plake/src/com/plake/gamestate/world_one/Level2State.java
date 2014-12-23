@@ -1,6 +1,5 @@
 package com.plake.gamestate.world_one;
 
-import com.plake.audio.JukeBox;
 import com.plake.entity.*;
 import com.plake.entity.enemies.Crawler;
 import com.plake.entity.enemies.Slugger;
@@ -65,7 +64,6 @@ public class Level2State extends GameState {
 			e.printStackTrace();
 		}
 
-		JukeBox.load("/Music/level1-1.mp3", "level1");
 		//JukeBox.loop("level1", 600, JukeBox.getFrames("level1") - 2200);
 		
 		System.out.println("Level: Level 2 (Jumer Level) Initialized!");
