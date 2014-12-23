@@ -27,8 +27,8 @@ public class MenuState extends GameState {
 	private BufferedImage title, up, down, enter;
 
 	private HashMap<String, AudioPlayer> sfx;
-
-	// private Updater u;
+	
+	private AudioPlayer bgMusic;
 
 	public MenuState(GameStateManager gsm) {
 		super(gsm);
@@ -37,6 +37,9 @@ public class MenuState extends GameState {
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
 		sfx.put("menumusic", new AudioPlayer("/Music/menumusic.mp3"));
+		
+		bgMusic = new AudioPlayer("/Music/menumusic.mp3");
+		bgMusic.play();
 		
 		this.gsm = gsm;
 		try {
@@ -97,7 +100,7 @@ public class MenuState extends GameState {
 	private void select() {
 		if (currentChoice == 0) {
 			gsm.setState(7);
-
+			bgMusic.stop();
 		}
 		if (currentChoice == 1) {
 
