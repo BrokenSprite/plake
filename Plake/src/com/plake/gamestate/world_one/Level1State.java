@@ -179,7 +179,7 @@ public class Level1State extends GameState {
 
 		player.draw(g);
 
-		// //teleport.draw(g);
+		teleport.draw(g);
 
 		// draw ememies
 		for (int i = 0; i < enemys.size(); i++) {

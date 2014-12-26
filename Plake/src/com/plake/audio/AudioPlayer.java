@@ -14,9 +14,9 @@ public class AudioPlayer {
 			AudioInputStream ais = AudioSystem.getAudioInputStream(getClass().getResourceAsStream(s));
 			AudioFormat baseFormat = ais.getFormat();
 			AudioFormat decodeFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, baseFormat.getSampleRate(), 16, baseFormat.getChannels(), baseFormat.getChannels() * 2, baseFormat.getSampleRate(), false);
-			AudioInputStream dias = AudioSystem.getAudioInputStream(decodeFormat, ais);
+			AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
 			clip = AudioSystem.getClip();
-			clip.open(dias);
+			clip.open(dais);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
