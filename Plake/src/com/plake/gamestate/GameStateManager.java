@@ -17,7 +17,7 @@ public class GameStateManager {
 	private GameState[] gameStates;
 	private int currentState;
 
-	public static final int NUMGAMESTATES = 11;
+	public static final int NUMGAMESTATES = 12;
 
 	public static final int MENUSTATE = 0;
 	public static final int LEVEL1STATE = 1;
@@ -30,6 +30,7 @@ public class GameStateManager {
 	public static final int LEVELCOMP = 8;
 	public static final int LEVEL5STATE = 9;
 	public static final int W2_LEVEL1STATE = 10;
+	public static final int WORLDONEMAP = 11;
 
 	public boolean l1beat, l2beat, l3beat, l4beat, l5beat;
 	public boolean w2_l1beat;
@@ -102,6 +103,8 @@ public class GameStateManager {
 
 		else if (state == LEVELCOMP)
 			gameStates[state] = new LevelCompletedState(this);
+		else if (state == WORLDONEMAP)
+			gameStates[state] = new WorldOneMap(this);
 
 	}
 
