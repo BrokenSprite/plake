@@ -1,6 +1,5 @@
 package com.plake.gamestate;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -9,8 +8,6 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import com.plake.audio.AudioPlayer;
-import com.plake.entity.FireBall;
-import com.plake.entity.Player;
 import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
 
@@ -20,8 +17,14 @@ public class WorldOneMap extends GameState {
 	private String[] options = { "Green", "Kat", "Blue", "Purple" };
 	private Font font;
 	private Font fontInfo;
-	private BufferedImage title, l1, l2, l3, l4, l5;
+	private BufferedImage title, mapBg, map, l1, l2, l3, l4, l5;
+	
+	private boolean l1beat, l2beat, l3beat, l4beat, l5beat;
+
 	private HashMap<String, AudioPlayer> sfx;
+	private GameStateManager gsm;
+
+	public static String playerPath;
 
 	public WorldOneMap(GameStateManager gsm) {
 		super(gsm);
@@ -35,8 +38,12 @@ public class WorldOneMap extends GameState {
 			bg.setVector(-0.1, 0);
 			font = new Font("Arial", Font.PLAIN, 12);
 			fontInfo = new Font("Arial", Font.PLAIN, 10);
+			mapBg = ImageIO.read(getClass().getResourceAsStream(
+					"/Backgrounds/mapbg.png"));
 			title = ImageIO.read(getClass().getResourceAsStream(
-					"/Menu/charsel.png"));
+					"/Menu/w1map.png"));
+			map = ImageIO.read(getClass().getResourceAsStream(
+					"/Backgrounds/w1map.png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,33 +55,44 @@ public class WorldOneMap extends GameState {
 	public void update() {
 		handleInput();
 		bg.update();
+		checkLevels();
+	}
+	
+	private void checkLevels() {
+		if (l1beat) {
+			
+		}
 	}
 
 	public void draw(Graphics2D g) {
 		bg.draw(g);
-		g.drawImage(title, 105, 25, null);
+		g.drawImage(mapBg, 0, 0, null);
+		g.drawImage(title, 105, -10, null);
+		g.drawImage(map, 0, 0, null);
+
 		g.setFont(font);
 		for (int i = 0; i < options.length; i++) {
 			if (i == currentChoice && i == 0) {
-				
+
 			} else if (i == currentChoice && i == 1) {
-				
+
 			} else if (i == currentChoice && i == 2) {
 
 			} else if (i == currentChoice && i == 3) {
-				
+
 			} else {
-				
+
 			}
-			//g.drawString(options[i], 70 + i * 80, 180);
+			// g.drawString(options[i], 70 + i * 80, 180);
 		}
 	}
 
 	private void select() {
-	
+
 	}
 
-	public void handleInput() { //Simple input handling obviously referencing Keys.class
+	public void handleInput() { // Simple input handling obviously referencing
+								// Keys.class
 		/*
 		 * if (Keys.isPressed(Keys.ENTER) && currentChoice == 1) {
 		 * sfx.get("bump").play(); return; }
@@ -97,5 +115,5 @@ public class WorldOneMap extends GameState {
 			}
 		}
 	}
-	
+
 }

@@ -113,6 +113,7 @@ public class CharacterSelect extends GameState {
 		if (currentChoice == 0) {
 			Player.path = "/Sprites/Player/Greendrag/playersprites.gif";
 			FireBall.path = "/Sprites/Player/fireball.gif";
+			
 			gsm.setState(11);
 			// JukeBox.stop("menuMusic");
 		}

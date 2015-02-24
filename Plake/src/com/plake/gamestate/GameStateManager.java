@@ -33,6 +33,7 @@ public class GameStateManager {
 	public static final int WORLDONEMAP = 11;
 
 	public boolean l1beat, l2beat, l3beat, l4beat, l5beat;
+	public boolean w1beat;
 	public boolean w2_l1beat;
 
 	private PauseState pauseState;
@@ -51,7 +52,7 @@ public class GameStateManager {
 
 	}
 
-	public void nextLevel() {
+	/*public void nextLevel() {
 		LevelCompletedState.eDead = 0;
 		LevelCompletedState.score = 0;
 
@@ -75,7 +76,7 @@ public class GameStateManager {
 			setState(0);
 		}
 
-	}
+	}*/
 
 	public int getCurrentState() {
 		return currentState;
