@@ -108,13 +108,13 @@ public class WorldOneMap extends GameState
 			sfx.get("menuselect").play();
 			System.out.println("Handled Enter");
 			select();
-		} else if (Keys.isPressed(Keys.LEFT)) {
+		} else if (Keys.isPressed(Keys.LEFT) || (Keys.isPressed(Keys.DOWN))) {
 			System.out.println("Handled Left");
 			if (currentChoice > 0) {
 				sfx.get("menuoption").play();
 				currentChoice--;
 			}
-		} else if (Keys.isPressed(Keys.RIGHT)) {
+		} else if (Keys.isPressed(Keys.RIGHT) || (Keys.isPressed(Keys.UP))) {
 			System.out.println("Handled Down");
 			if (currentChoice < options.length - 1) {
 				sfx.get("menuoption").play();
