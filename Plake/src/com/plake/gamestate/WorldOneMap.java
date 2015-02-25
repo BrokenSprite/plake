@@ -14,10 +14,10 @@ import com.plake.utils.Keys;
 public class WorldOneMap extends GameState {
 	private Background bg;
 	private int currentChoice = 0;
-	private String[] options = { "Green", "Kat", "Blue", "Purple" };
+	private String[] options = { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5" };
 	private Font font;
 	private Font fontInfo;
-	private BufferedImage title, mapBg, map, l1, l2, l3, l4, l5;
+	private BufferedImage title, mapBg, map, mapHead, l1, l2, l3, l4, l5;
 	
 	private boolean l1beat, l2beat, l3beat, l4beat, l5beat;
 
@@ -44,6 +44,7 @@ public class WorldOneMap extends GameState {
 					"/Menu/w1map.png"));
 			map = ImageIO.read(getClass().getResourceAsStream(
 					"/Backgrounds/w1map.png"));
+			mapHead = ImageIO.read(getClass().getResourceAsStream("/Sprites/Map/icon.png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -107,6 +108,8 @@ public class WorldOneMap extends GameState {
 				sfx.get("menuoption").play();
 				currentChoice--;
 			}
+		}else if (Keys.isPressed(Keys.BUTTON3)) {
+			gsm.setState(1);
 		} else if (Keys.isPressed(Keys.RIGHT)) {
 			System.out.println("Handled Down");
 			if (currentChoice < options.length - 1) {

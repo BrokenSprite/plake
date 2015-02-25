@@ -79,7 +79,7 @@ public class LevelCompletedState extends GameState {
 	public void handleInput() {
 		if (Keys.isPressed(Keys.ENTER)) {
 			System.out.println("Enter pressed.");
-			gsm.nextLevel();
+			gsm.setState(11);
 		} else if (Keys.isPressed(Keys.ESCAPE)) {
 			gsm.setState(0);
 			System.out.println("Escape pressed.");
