@@ -24,6 +24,8 @@ public class LevelCompletedState extends GameState {
 
 	private BufferedImage pEnter;
 	private BufferedImage pEsc;
+	
+	private WorldOneMap wom;
 
 	public LevelCompletedState(GameStateManager gsm) {
 		super(gsm);
@@ -79,6 +81,7 @@ public class LevelCompletedState extends GameState {
 	public void handleInput() {
 		if (Keys.isPressed(Keys.ENTER)) {
 			System.out.println("Enter pressed.");
+			wom.moveToNextLevel();
 			gsm.setState(11);
 		} else if (Keys.isPressed(Keys.ESCAPE)) {
 			gsm.setState(0);
