@@ -24,7 +24,7 @@ public class MenuState extends GameState {
 
 	private Font font, fontInfo;
 
-	private BufferedImage title, up, down, enter;
+	private BufferedImage title, up, down, enter, head;
 
 	private HashMap<String, AudioPlayer> sfx;
 	
@@ -55,6 +55,8 @@ public class MenuState extends GameState {
 			up = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowup.gif"));
 			down = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowdown.gif"));
 			enter = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/enter.gif"));
+			
+			head = ImageIO.read(getClass().getResourceAsStream("/Sprites/Map/icon.png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,6 +79,13 @@ public class MenuState extends GameState {
 		g.drawImage(up, 290, 188, null);
 		g.drawImage(down, 310, 188, null);
 		g.drawImage(enter, 80, 188, null);
+		
+		if (currentChoice == 0) {
+			g.drawImage(head, 163, 126, null);
+		}
+		if (currentChoice == 1) {
+			g.drawImage(head, 163, 142, null);
+		}
 
 		g.setColor(versionColor);
 		g.setFont(fontInfo);
@@ -103,7 +112,6 @@ public class MenuState extends GameState {
 			bgMusic.stop();
 		}
 		if (currentChoice == 1) {
-
 			System.exit(0);
 		}
 	}
@@ -112,17 +120,13 @@ public class MenuState extends GameState {
 
 		if (Keys.isPressed(Keys.ENTER)) {
 			sfx.get("menuselect").play();
-
-			System.out.println("Handled Enter");
 			select();
 		} else if (Keys.isPressed(Keys.UP)) {
-			System.out.println("Handled Up");
 			if (currentChoice > 0) {
 				sfx.get("menuoption").play();
 				currentChoice--;
 			}
 		} else if (Keys.isPressed(Keys.DOWN)) {
-			System.out.println("Handled Down");
 			if (currentChoice < options.length - 1) {
 				sfx.get("menuoption").play();
 				currentChoice++;
