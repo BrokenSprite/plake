@@ -44,7 +44,7 @@ public class WorldOneMap extends GameState
 			mapBg = ImageIO.read(getClass().getResourceAsStream("/Backgrounds/mapbg.png"));
 			title = ImageIO.read(getClass().getResourceAsStream("/Menu/w1map.png"));
 			map = ImageIO.read(getClass().getResourceAsStream("/Backgrounds/w1map.png"));
-			mapHead = ImageIO.read(getClass().getResourceAsStream("/Sprites/Map/icon.png"));
+			mapHead = ImageIO.read(getClass().getResourceAsStream(mapHeadPath));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
