@@ -15,6 +15,8 @@ import com.plake.tilemap.Background;
 import com.plake.utils.Keys;
 
 public class CharacterSelect extends GameState {
+	
+	private WorldOneMap wom;
 	private Background bg;
 	private int currentChoice = 0;
 	private String[] options = { "Green", "Kat", "Blue", "Purple" };
@@ -113,6 +115,7 @@ public class CharacterSelect extends GameState {
 		if (currentChoice == 0) {
 			Player.path = "/Sprites/Player/Greendrag/playersprites.gif";
 			FireBall.path = "/Sprites/Player/fireball.gif";
+			WorldOneMap.mapHeadPath = "/Sprites/Player/Greendrag/iconGreen.gif";
 			
 			gsm.setState(11);
 			// JukeBox.stop("menuMusic");
@@ -120,18 +123,21 @@ public class CharacterSelect extends GameState {
 		if (currentChoice == 1) {
 			Player.path = "/Sprites/Player/Kat/playersprites.gif";
 			FireBall.path = "/Sprites/Player/Kat/hairball.gif";
+			
 			gsm.setState(11);
 			// JukeBox.stop("menuMusic");
 		}
 		if (currentChoice == 2) {
 			Player.path = "/Sprites/Player/Bluedrag/playersprites.gif";
 			FireBall.path = "/Sprites/Player/fireball.gif";
+			wom.mapHeadPath = "/Sprites/Player/Bluedrag/iconBlue.gif";
 			gsm.setState(11);
 			// JukeBox.stop("menuMusic");
 		}
 		if (currentChoice == 3) {
 			Player.path = "/Sprites/Player/Purpledrag/playersprites.gif";
 			FireBall.path = "/Sprites/Player/fireball.gif";
+			wom.mapHeadPath = "/Sprites/Player/Purpledrag/iconPurple.gif";
 			gsm.setState(11);
 			// JukeBox.stop("menuMusic");
 		}

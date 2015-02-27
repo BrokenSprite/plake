@@ -21,6 +21,8 @@ public class WorldOneMap extends GameState
 	private Font fontInfo;
 	private BufferedImage bg, title, mapBg, map, mapHead, l1, l2, l3, l4, l5;
 
+	public static String mapHeadPath;
+	
 	private boolean l1beat, l2beat, l3beat, l4beat, l5beat;
 
 	private HashMap<String, AudioPlayer> sfx;
@@ -64,7 +66,7 @@ public class WorldOneMap extends GameState
 
 	public void draw(Graphics2D g) {
 		g.drawImage(bg, 0, 0, null);
-		g.drawImage(mapBg, 0, 0, null);
+		//g.drawImage(mapBg, 0, 0, null);
 		g.drawImage(title, 105, -10, null);
 		g.drawImage(map, 0, 0, null);
 		g.setFont(font);
