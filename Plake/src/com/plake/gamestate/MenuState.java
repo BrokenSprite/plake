@@ -3,6 +3,7 @@ package com.plake.gamestate;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
@@ -27,20 +28,19 @@ public class MenuState extends GameState {
 	private BufferedImage title, up, down, enter, head;
 
 	private HashMap<String, AudioPlayer> sfx;
-	
+
 	private AudioPlayer bgMusic;
 
 	public MenuState(GameStateManager gsm) {
 		super(gsm);
-
 		sfx = new HashMap<String, AudioPlayer>();
 		sfx.put("menuselect", new AudioPlayer("/SFX/menuselect.mp3"));
 		sfx.put("menuoption", new AudioPlayer("/SFX/menuoption.mp3"));
 		sfx.put("menumusic", new AudioPlayer("/Music/menumusic.mp3"));
-		
+
 		bgMusic = new AudioPlayer("/Music/menumusic.mp3");
 		bgMusic.play();
-		
+
 		this.gsm = gsm;
 		try {
 
@@ -55,14 +55,15 @@ public class MenuState extends GameState {
 			up = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowup.gif"));
 			down = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/arrowdown.gif"));
 			enter = ImageIO.read(getClass().getResourceAsStream("/Sprites/Buttons/enter.gif"));
-			
+
 			head = ImageIO.read(getClass().getResourceAsStream("/Sprites/Map/icon.png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//sfx.get("menumusic").play();
-		//JukeBox.load("/Music/menumusic.mp3", "menumusic");
-		//JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") - 2200);
+		// sfx.get("menumusic").play();
+		// JukeBox.load("/Music/menumusic.mp3", "menumusic");
+		// JukeBox.loop("menumusic", 600, JukeBox.getFrames("menumusic") -
+		// 2200);
 	}
 
 	public void init() {
@@ -74,12 +75,13 @@ public class MenuState extends GameState {
 	}
 
 	public void draw(Graphics2D g) {
+		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
 		bg.draw(g);
 		g.drawImage(title, 105, 25, null);
 		g.drawImage(up, 290, 188, null);
 		g.drawImage(down, 310, 188, null);
 		g.drawImage(enter, 80, 188, null);
-		
+
 		if (currentChoice == 0) {
 			g.drawImage(head, 163, 126, null);
 		}

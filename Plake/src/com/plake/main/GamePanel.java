@@ -3,6 +3,7 @@ package com.plake.main;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -15,9 +16,9 @@ import com.plake.utils.Keys;
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 
-	public static final int WIDTH = 400;// 320
-	public static final int HEIGHT = 240;// 240
-	public static final int SCALE = 2;
+	public static final int WIDTH = Game.width;// 320
+	public static final int HEIGHT = Game.height;// 240
+	public static final int SCALE = Game.scale;
 
 	private Thread thread;
 	private boolean running;
@@ -47,12 +48,17 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	}
 
 	public void init() {
+
+		System.out.println(GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds());
+		
+		
+		
 		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		g = (Graphics2D) image.getGraphics();
 		running = true;
 
 		gsm = new GameStateManager();
-		
+
 	}
 
 	public void run() {
